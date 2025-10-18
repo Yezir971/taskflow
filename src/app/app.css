@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.example-container {
+  width: 400px;
+  margin: 12px;
+  border: 1px solid #555;
+}
+
+mat-drawer-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.app-container {
+  height: 100vh;
+}
+mat-drawer {
+  width: 200px;
+  background: var(--mat-sys-side-bar-bg);
+  padding: 16px;
+}
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}

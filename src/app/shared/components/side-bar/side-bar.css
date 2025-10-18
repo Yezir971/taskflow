@@ -1,0 +1,24 @@
+nav {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  padding: 0;
+}
+
+nav a {
+  cursor: pointer;
+}
+nav a {
+  padding: 6px;
+  border-radius: 4px;
+}
+nav a:hover {
+  background: var(--mat-sys-primary-container);
+  padding: 6px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
