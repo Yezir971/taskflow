@@ -1,0 +1,17 @@
+.example-card {
+  max-width: 100%;
+}
+
+.example-card-footer {
+  padding: 16px;
+}
+.mat-mdc-card-content {
+  font-weight: var(--mat-sys-bold-font-weight);
+  font-size: var(--mat-sys-display-small-size);
+}
+.danger {
+  color: var(--mat-sys-error);
+}
+.success {
+  color: var(--mat-sys-success);
+}

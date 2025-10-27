@@ -36,8 +36,9 @@ html {
   --mat-sys-on-tertiary-fixed-variant: light-dark(#7e0a81, #7e0a81);
 
   /* Neutral palette variables */
-  --mat-sys-background: light-dark(#f8f9ff, #051425);
+  --mat-sys-background: light-dark(#f8f9ff, #1e293b);
   --mat-sys-on-background: light-dark(#0d1c2e, #d5e3fc);
+  --mat-sys-dialog-background: light-dark(#ffffff, #111C2E);
   --mat-sys-surface: light-dark(#f8f9ff, #051425);
   --mat-sys-surface-dim: light-dark(#ccdbf3, #051425);
   --mat-sys-surface-bright: light-dark(#f8f9ff, #2c3a4d);
@@ -45,7 +46,7 @@ html {
   --mat-sys-surface-container-lowest: light-dark(#ffffff, #010f20);
   --mat-sys-surface-container: light-dark(#e6eeff, #122032);
   --mat-sys-surface-container-high: light-dark(#dce9ff, #1d2b3d);
-  --mat-sys-surface-container-highest: light-dark(#d5e3fc, #283648);
+  --mat-sys-surface-container-highest: light-dark(#d5e3fc, #0b1220);
   --mat-sys-on-surface: light-dark(#0d1c2e, #d5e3fc);
   --mat-sys-shadow: light-dark(#000000, #000000);
   --mat-sys-scrim: light-dark(#000000, #000000);
@@ -64,6 +65,12 @@ html {
   --mat-sys-on-error: light-dark(#ffffff, #68000a);
   --mat-sys-error-container: light-dark(#ffdad7, #930013);
   --mat-sys-on-error-container: light-dark(#410004, #ffdad7);
+
+  /* Succes palette variables  */
+  --mat-sys-success: light-dark(#0f8a2c, #66e395);
+  --mat-sys-on-success: light-dark(#ffffff, #00390f);
+  --mat-sys-success-container: light-dark(#aef3be, #005321);
+  --mat-sys-on-success-container: light-dark(#002108, #aef3be);
 
   /* Neutral variant palette variables */
   --mat-sys-surface-variant: light-dark(#d3e4fe, #38485d);
@@ -296,7 +303,7 @@ html {
     --mat-sys-on-tertiary-fixed-variant: light-dark(#ffffff, #260028);
 
     /* Neutral palette variables */
-    --mat-sys-background: light-dark(#f8f9ff, #051425);
+    --mat-sys-background: light-dark(#f8f9ff, #1e293b);
     --mat-sys-on-background: light-dark(#0d1c2e, #d5e3fc);
     --mat-sys-surface: light-dark(#f8f9ff, #051425);
     --mat-sys-surface-dim: light-dark(#abbad1, #051425);

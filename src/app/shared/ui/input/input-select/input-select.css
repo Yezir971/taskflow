@@ -1,0 +1,17 @@
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: inherit;
+  outline: none;
+  font-size: 14px;
+}
+:host {
+  width: 50%;
+}

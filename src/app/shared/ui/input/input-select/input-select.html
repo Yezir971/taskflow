@@ -1,0 +1,8 @@
+<span class="column">
+  <label [for]="label()">{{ label() }}</label>
+  <select (input)="onSelect($event)" class="input" [id]="label()">
+    @for (item of option(); track $index) {
+    <option [value]="item">{{ item }}</option>
+    }
+  </select>
+</span>

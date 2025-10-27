@@ -1,0 +1,32 @@
+.meta {
+  background: var(--mat-sys-dialog-background);
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  height: fit-content;
+}
+.meta h4 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+.meta .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.03);
+}
+.meta .row:last-child {
+  border-bottom: none;
+}
+.chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  font-weight: 600;
+}
+.grid-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}

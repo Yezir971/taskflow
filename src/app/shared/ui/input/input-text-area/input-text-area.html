@@ -1,0 +1,9 @@
+<span class="row">
+  <label [for]="label()">{{ label() }}</label>
+  <textarea
+    [name]="label()"
+    [id]="label()"
+    (input)="onInput($event)"
+    [placeholder]="placehold()"
+  ></textarea>
+</span>
