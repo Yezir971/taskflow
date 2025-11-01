@@ -1,31 +1,41 @@
-<table style="margin-top: 20px">
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Priorité</th>
-      <th>Statut</th>
-      <th>Échéance</th>
-      <th>Assignee</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (item of datas()(); track $index) {
-    <tr>
-      <td>
-        {{ item.title }}
-      </td>
-      <td>
-        {{ item.priority }}
-      </td>
-      <td>
-        {{ item.status }}
-      </td>
-      <td>{{ item.date.start | date : 'd/M/yy' }} - {{ item.date.end | date : 'd/M/yy' }}</td>
-      <td>
-        {{ item.assign }}
-      </td>
-    </tr>
+<table style="margin-top: 20px" mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="title">
+    <th *matHeaderCellDef>Titre</th>
+    <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+  </ng-container>
 
-    }
-  </tbody>
+  <ng-container matColumnDef="priority">
+    <th *matHeaderCellDef>Priorité</th>
+    <td mat-cell *matCellDef="let element">{{ element.priority }}</td>
+  </ng-container>
+
+  <!-- status Column -->
+  <ng-container matColumnDef="status">
+    <th *matHeaderCellDef>Statut</th>
+    <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+  </ng-container>
+
+  <!-- date Column -->
+  <ng-container matColumnDef="date">
+    <th *matHeaderCellDef>Échéance</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.date.start | date : 'd/M/yy' }} - {{ element.date.end | date : 'd/M/yy' }}
+    </td>
+  </ng-container>
+
+  <!-- assign Column -->
+  <ng-container matColumnDef="assign">
+    <th *matHeaderCellDef>Assignee</th>
+    <td mat-cell *matCellDef="let element">{{ element.assign }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+<mat-paginator
+  [length]="dataSource.data.length"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select page"
+>
+</mat-paginator>

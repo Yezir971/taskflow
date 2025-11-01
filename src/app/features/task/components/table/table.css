@@ -22,9 +22,22 @@ tr:nth-child(even) {
 tr:hover {
   background: #1e293b;
 }
+.contain-table {
+  cursor: pointer;
+}
+
 .status {
   padding: 6px 10px;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 600;
+}
+.mat-mdc-paginator {
+  border-radius: 0px 0px 12px 12px;
+}
+.mat-mdc-table,
+.mdc-data-table__table,
+.cdk-table {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
