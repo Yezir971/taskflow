@@ -14,15 +14,15 @@ export class PieCharts {
   private tasks = this.dataStore.getTaskStore();
 
   private numberInProgresse = computed(
-    () => this.tasks().filter((element: { status: string }) => element.status == 'En cours').length
+    () => this.tasks().filter((element) => element.status == 'En cours').length
   );
 
   private numberDoIt = computed(
-    () => this.tasks().filter((element: { status: string }) => element.status == 'Terminé').length
+    () => this.tasks().filter((element) => element.status == 'Terminé').length
   );
 
   private numberToDo = computed(
-    () => this.tasks().filter((element: { status: string }) => element.status == 'À faire').length
+    () => this.tasks().filter((element) => element.status == 'À faire').length
   );
 
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;

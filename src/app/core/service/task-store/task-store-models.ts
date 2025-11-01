@@ -6,7 +6,7 @@ export interface TaskStoreModel {
   title: string | null | undefined;
   priority: Priority | null | undefined;
   status: Status | null | undefined;
-  date: { start?: Date; end?: Date } | '' | null | undefined;
+  date: { start?: Date; end?: Date } ;
   assign: string | null | undefined;
   description: string | null | undefined;
 }

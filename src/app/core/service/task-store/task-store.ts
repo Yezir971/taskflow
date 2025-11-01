@@ -1,4 +1,5 @@
 import { Injectable, signal, WritableSignal } from '@angular/core';
+import { TaskStoreModel } from './task-store-models';
 
 @Injectable({
   providedIn: 'root',
@@ -6,7 +7,7 @@ import { Injectable, signal, WritableSignal } from '@angular/core';
 export class TaskStore {
   private taskStore = signal(JSON.parse(localStorage.getItem('tasks') ?? '[]'));
 
-  getTaskStore = () => {
+  getTaskStore = (): WritableSignal<TaskStoreModel[]> => {
     return this.taskStore;
   };
   private setTaskStore = (item: any) => {

@@ -21,12 +21,12 @@
       <p>
         {{
           dataTask()?.value.date.start
-            ? (dataTask()?.value.date.start | date : 'M/d/yy')
+            ? (dataTask()?.value.date.start | date : 'd/M/yy')
             : '--/--/--'
         }}
         au
         {{
-          dataTask()?.value.date.end ? (dataTask()?.value.date.end | date : 'M/d/yy') : '--/--/--'
+          dataTask()?.value.date.end ? (dataTask()?.value.date.end | date : 'd/M/yy') : '--/--/--'
         }}
       </p>
     </span>

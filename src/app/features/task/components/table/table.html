@@ -8,5 +8,24 @@
       <th>Assignee</th>
     </tr>
   </thead>
-  <tbody></tbody>
+  <tbody>
+    @for (item of datas()(); track $index) {
+    <tr>
+      <td>
+        {{ item.title }}
+      </td>
+      <td>
+        {{ item.priority }}
+      </td>
+      <td>
+        {{ item.status }}
+      </td>
+      <td>{{ item.date.start | date : 'd/M/yy' }} - {{ item.date.end | date : 'd/M/yy' }}</td>
+      <td>
+        {{ item.assign }}
+      </td>
+    </tr>
+
+    }
+  </tbody>
 </table>

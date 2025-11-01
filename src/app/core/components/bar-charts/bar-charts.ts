@@ -13,14 +13,14 @@ export class BarCharts {
   dataStore = inject(TaskStore);
   tasks = this.dataStore.getTaskStore();
   private numberLow = computed(
-    () => this.tasks().filter((element: { priority: string }) => element.priority == 'Basse').length
+    () => this.tasks().filter((element) => element.priority == 'Basse').length
   );
   private numberMedium = computed(
     () =>
-      this.tasks().filter((element: { priority: string }) => element.priority == 'Moyenne').length
+      this.tasks().filter((element) => element.priority == 'Moyenne').length
   );
   private numberHeight = computed(
-    () => this.tasks().filter((element: { priority: string }) => element.priority == 'Haute').length
+    () => this.tasks().filter((element) => element.priority == 'Haute').length
   );
   @ViewChild(BaseChartDirective) chart: BaseChartDirective<'bar'> | undefined;
 
