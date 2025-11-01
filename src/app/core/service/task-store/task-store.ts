@@ -17,8 +17,16 @@ export class TaskStore {
     localStorage.setItem('tasks', JSON.stringify([...this.getTaskStore()(), item]));
   };
   addNewItem = (item: any) => {
-    this.setTaskStore(item);
-    this.addToLocalStoreage(item);
+    this.setTaskStore({ ...item, id: this.taskStore().length });
+    this.addToLocalStoreage({ ...item, id: this.taskStore().length });
   };
-  removeItem = () => {};
+  private updateTaskStore = (item: any) => {
+    this.taskStore.set(item);
+  };
+  removeItem = (item: number) => {
+    let listeArr = this.taskStore();
+    let newList = listeArr.filter((element: any) => element.id !== item);
+    localStorage.setItem('tasks', JSON.stringify(newList));
+    this.updateTaskStore(newList);
+  };
 }

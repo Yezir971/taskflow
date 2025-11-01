@@ -5,6 +5,9 @@ table {
   border-radius: 12px;
   overflow: hidden;
 }
+.container-task {
+  padding: 0 20px 30px 20px;
+}
 th,
 td {
   padding: 12px 16px;
@@ -40,4 +43,7 @@ tr:hover {
 .cdk-table {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+}
+.icon {
+  color: red;
 }
