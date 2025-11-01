@@ -1,0 +1,10 @@
+<div class="the-chart" [style.height.px]="dynHeight">
+  <canvas
+    baseChart
+    [data]="pieChartData()"
+    [type]="pieChartType"
+    [options]="pieChartOptions"
+    (chartHover)="chartHovered($event)"
+  >
+  </canvas>
+</div>

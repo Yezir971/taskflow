@@ -18,9 +18,7 @@
           (texteValue)="onTitreChange($event)"
           placehold="Ex: une super tâche..."
         ></app-input-text>
-        <span *ngIf="profileForm.get('title')?.hasError('required')">
-          Le champ titre est vide ! :(
-        </span>
+        <p class="error">{{ profileForm | messageErrorForm : ['title'] }}</p>
 
         <div class="flex-row">
           <app-input-select
@@ -34,6 +32,7 @@
             [option]="status"
           ></app-input-select>
         </div>
+        <p class="error">{{ profileForm | messageErrorForm : ['status', 'priority'] }}</p>
 
         <div class="flex-row">
           <app-input-data-pick
@@ -46,6 +45,7 @@
             placehold="Ex: une super tâche..."
           ></app-input-text>
         </div>
+        <p class="error">{{ profileForm | messageErrorForm : ['date', 'assign'] }}</p>
 
         <div class="flex-row">
           <app-input-text-area
@@ -54,6 +54,7 @@
             label="Description"
           ></app-input-text-area>
         </div>
+        <p class="error">{{ profileForm | messageErrorForm : ['description'] }}</p>
       </div>
 
       <div class="right-col">
@@ -67,7 +68,15 @@
     <p>Tous les champs peuvent être modifiés plus tard.</p>
     <span>
       <button matButton mat-dialog-close>Annuler</button>
-      <button type="submit" matButton mat-dialog-close cdkFocusInitial>Enregistrer</button>
+      @if (profileForm.invalid) {
+      <button type="submit" disabled="true" matButton mat-dialog-close cdkFocusInitial>
+        Enregistrer
+      </button>
+      }@else{
+      <button type="submit" disabled="false" matButton mat-dialog-close cdkFocusInitial>
+        Enregistrer
+      </button>
+      }
     </span>
   </mat-dialog-actions>
 </form>

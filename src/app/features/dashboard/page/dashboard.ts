@@ -3,10 +3,13 @@ import { Header } from "../components/header/header";
 import { CardSmall } from "../components/card-small/card-small";
 import { InfoCardSmall } from '../components/card-small/models/info-card-small';
 import { I } from '@angular/cdk/keycodes';
+import { CardBig } from "../../../core/components/card-big/card-big";
+import { BarCharts } from "../../../core/components/bar-charts/bar-charts";
+import { PieCharts } from "../../../core/components/pie-charts/pie-charts";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Header, CardSmall],
+  imports: [Header, CardSmall, CardBig, BarCharts, PieCharts],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

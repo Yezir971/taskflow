@@ -38,7 +38,7 @@ html {
   /* Neutral palette variables */
   --mat-sys-background: light-dark(#f8f9ff, #1e293b);
   --mat-sys-on-background: light-dark(#0d1c2e, #d5e3fc);
-  --mat-sys-dialog-background: light-dark(#ffffff, #111C2E);
+  --mat-sys-dialog-background: light-dark(#ffffff, #111c2e);
   --mat-sys-surface: light-dark(#f8f9ff, #051425);
   --mat-sys-surface-dim: light-dark(#ccdbf3, #051425);
   --mat-sys-surface-bright: light-dark(#f8f9ff, #2c3a4d);
