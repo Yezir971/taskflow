@@ -1,0 +1,10 @@
+.container-task {
+  display: grid;
+  gap: 1rem;
+}
+.container-task {
+  padding: 0 20px;
+}
+:host {
+  width: 100%;
+}

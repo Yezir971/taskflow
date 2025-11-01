@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { AddTask } from "../../../../shared/ui/button/add-task/add-task";
 
 @Component({
@@ -8,6 +8,6 @@ import { AddTask } from "../../../../shared/ui/button/add-task/add-task";
   styleUrl: './header.css'
 })
 export class Header {
-  title = 'Dashboard'
+  readonly title = input<string>('')
 
 }

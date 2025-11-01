@@ -1,5 +1,5 @@
 <main class="container-dashboard">
-  <app-header></app-header>
+  <app-header title="Dashboard"></app-header>
   <div class="container-card-small">
     <app-card-small [itemCollection]="total"></app-card-small>
     <app-card-small [itemCollection]="end"></app-card-small>
@@ -7,7 +7,7 @@
     <app-card-small [itemCollection]="late"></app-card-small>
   </div>
   <div class="container-big-card">
-    <app-card-big titleBigCard="Répartition des statuts"> 
+    <app-card-big titleBigCard="Répartition des statuts">
       <app-pie-charts></app-pie-charts>
     </app-card-big>
     <app-card-big titleBigCard="Tâches par priorité">
