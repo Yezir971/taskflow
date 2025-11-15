@@ -5,13 +5,13 @@
       (dateChange)="onDataPickChange($event, 'start')"
       matStartDate
       placeholder="Start date"
-      formControlName="start"
+      [value]="range()?.start ?? null"
     />
     <input
       matEndDate
       (dateChange)="onDataPickChange($event, 'end')"
       placeholder="End date"
-      formControlName="end"
+      [value]="range()?.end ?? null"
     />
   </mat-date-range-input>
   <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>

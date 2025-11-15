@@ -1,0 +1,45 @@
+.flex {
+  display: flex;
+}
+.margin-header {
+  margin: 10px 20px;
+}
+.space-between {
+  justify-content: space-between;
+}
+.row {
+  flex-direction: row;
+  gap: 8px;
+}
+.col {
+  flex-direction: column;
+  gap: 8px;
+}
+.full-width {
+  width: 100%;
+}
+.center {
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.flex-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+.left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.error {
+  color: var(--mat-sys-error);
+  margin: 0px;
+}

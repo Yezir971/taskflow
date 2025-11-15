@@ -17,6 +17,7 @@ const year = today.getFullYear();
 })
 export class InputDataPick {
   readonly label = input<string>('aucun label défini');
+  readonly range = input<{ start?: Date; end?: Date } | null>(null);
   readonly dataPickValue = output<{ start?: Date; end?: Date }>();
 
   

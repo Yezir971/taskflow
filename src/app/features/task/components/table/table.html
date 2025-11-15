@@ -41,8 +41,8 @@
         >
           <mat-icon>cancel</mat-icon>
         </button>
-        <button color="red" matIconButton aria-label="icon button with a delete icon">
-          <mat-icon color="red">edit</mat-icon>
+        <button matIconButton aria-label="Edit task icon">
+          <mat-icon (click)="editDialog('0ms', '0ms', element.id)" color="red">edit</mat-icon>
         </button>
       </td>
     </ng-container>

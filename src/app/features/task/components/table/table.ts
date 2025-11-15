@@ -1,4 +1,4 @@
-import { Component, input, Signal, AfterViewInit, ViewChild, effect, inject } from '@angular/core';
+import { Component, input, Signal, AfterViewInit, ViewChild, effect, inject, numberAttribute } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -6,6 +6,9 @@ import { TaskStoreModel } from '../../../../core/service/task-store/task-store-m
 import { TaskStore } from '../../../../core/service/task-store/task-store';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
+import { AddTaskDialog } from '../../../../shared/ui/dialog/add-task-dialog/add-task-dialog';
+import { EditTaskDialog } from '../../../../shared/ui/dialog/edit-task-dialog/edit-task-dialog';
 
 @Component({
   selector: 'app-table',
@@ -37,5 +40,17 @@ export class Table implements AfterViewInit {
   delete = (item: number) => {
     console.log(item);
     this.taskService.removeItem(item);
+  };
+  readonly dialog = inject(MatDialog);
+
+  editDialog = (enterAnimationDuration: string, exitAnimationDuration: string, item: number) => {
+    this.dialog.open(EditTaskDialog, {
+      width: 'auto',
+      height: 'auto',
+      maxWidth: '100%',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: {item}
+    });
   };
 }

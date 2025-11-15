@@ -9,6 +9,7 @@ import { Component, input, output } from '@angular/core';
 export class InputTextArea {
   readonly label = input<string>('Label non défini');
   readonly placehold = input<string>('Placeholder non défini');
+  readonly value = input<string>('');
   readonly textArea = output<string>();
 
   onInput(event: Event) {

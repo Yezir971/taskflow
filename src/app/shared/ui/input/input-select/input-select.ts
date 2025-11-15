@@ -11,6 +11,7 @@ import { Priority } from './models/priority.model';
 export class InputSelect {
   label = input<string>('Aucun');
   option = input<(Status | Priority)[]>([]);
+  selected = input<string>('');
   readonly selectValue = output<string>();
 
   onSelect(event: Event){

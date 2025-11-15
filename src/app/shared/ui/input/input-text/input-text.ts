@@ -7,11 +7,12 @@ import { MatInputModule } from '@angular/material/input';
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule],
   templateUrl: './input-text.html',
-  styleUrls: ['./input-text.css']
+  styleUrls: ['./input-text.css'],
 })
 export class InputText {
   readonly label = input<string>('Label non défini');
   readonly placehold = input<string>('Placeholder non défini');
+  readonly value = input<string>('');
   readonly texteValue = output<string>();
 
   onInput(event: Event) {

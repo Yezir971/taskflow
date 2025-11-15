@@ -1,0 +1,87 @@
+<div class="flex space-between center margin-header">
+  <div class="flex col">
+    <h2 mat-dialog-title>édition de tâche</h2>
+  </div>
+  <button mat-icon-button mat-dialog-close aria-label="Fermer">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<mat-divider></mat-divider>
+<form [formGroup]="profileForm" (ngSubmit)="handleSubmit()">
+  <mat-dialog-content>
+    <div class="grid-container">
+      <div class="left-col">
+        <app-input-text
+          label="Titre"
+          [value]="profileForm.controls['title'].value ?? ''"
+          (texteValue)="onTitreChange($event)"
+          placehold="Ex: une super tâche..."
+        ></app-input-text>
+        <p class="error">{{ profileForm | messageErrorForm : ['title'] }}</p>
+
+        <div class="flex-row">
+          <app-input-select
+            (selectValue)="onPriorityChange($event)"
+            label="Priorité"
+            [selected]="profileForm.controls['priority'].value ?? ''"
+            [option]="priority"
+          ></app-input-select>
+          <app-input-select
+            (selectValue)="onStatusChange($event)"
+            label="Status"
+            [selected]="profileForm.controls['status'].value ?? ''"
+            [option]="status"
+          ></app-input-select>
+        </div>
+        <p class="error">{{ profileForm | messageErrorForm : ['status', 'priority'] }}</p>
+
+        <div class="flex-row">
+          <app-input-data-pick
+            (dataPickValue)="onDateChange($event)"
+            [range]="profileForm.controls['date'].value || null"
+            label="Date limite"
+          ></app-input-data-pick>
+          <app-input-text
+            (texteValue)="onAsignChange($event)"
+            label="Assigné à"
+            [value]="profileForm.controls['assign'].value ?? ''"
+            placehold="Ex: une super tâche..."
+          ></app-input-text>
+        </div>
+        <p class="error">{{ profileForm | messageErrorForm : ['date', 'assign'] }}</p>
+
+        <div class="flex-row">
+          <app-input-text-area
+            (textArea)="onDescriptionChange($event)"
+            [value]="profileForm.controls['description'].value ?? ''"
+            placehold="Détails, checklist, liens..."
+            label="Description"
+          ></app-input-text-area>
+        </div>
+        <p class="error">{{ profileForm | messageErrorForm : ['description'] }}</p>
+      </div>
+
+      <div class="right-col">
+        <app-left-part [dataTask]="profileForm"></app-left-part>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-divider></mat-divider>
+
+  <mat-dialog-actions class="flex space-between">
+    <p>Tous les champs peuvent être modifiés plus tard.</p>
+    <span>
+      <button matButton mat-dialog-close>Annuler</button>
+      @if (profileForm.invalid) {
+      <button type="submit" disabled="true" matButton mat-dialog-close cdkFocusInitial>
+        Enregistrer
+      </button>
+      }@else{
+      <button type="submit" disabled="false" matButton mat-dialog-close cdkFocusInitial>
+        Enregistrer
+      </button>
+      }
+    </span>
+  </mat-dialog-actions>
+</form>
